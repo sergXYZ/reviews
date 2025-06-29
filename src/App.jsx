@@ -33,20 +33,28 @@ const App = () => {
   // console.log(person[index])
   return (
     <main>
-      <article>
-        <img src={image} />
-        <h2>{name}</h2>
-        <h4>{job}</h4>
-        <p>{text}</p>
-        <div>
-          <button type="button" onClick={prevPerson}>
+      <article className="review">
+        <div className="img-container">
+          <img src={image} alt={name} className="person-img" />
+          <span className="quote-icon">
+            <FaQuoteRight />
+          </span>
+        </div>
+        <h4 className="author">{name}</h4>
+        <p className="job">{job}</p>
+        <p className="info">{text}</p>
+
+        <div className="btn-container">
+          <button className="prev-btn" type="button" onClick={prevPerson}>
             <FaChevronLeft />
           </button>
-          <button type="button" onClick={nextPerson}>
+          <button className="next-btn" type="button" onClick={nextPerson}>
             <FaChevronRight />
           </button>
         </div>
-        <button onClick={randomPerson}>Random person</button>
+        <button className="btn btn-hipster" onClick={randomPerson}>
+          Random person
+        </button>
       </article>
     </main>
   )
